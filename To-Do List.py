@@ -6,20 +6,23 @@ def menu():
     print('[2] - Inserir novo item na lista')
     print('[3] - Remover um item da lista')
     print('[4] - Sair')
+
 def ver_Lista():
     if len(to_Do_list) == 0:
         print('Você ainda não tem tarefas :(')
     else:
         for i in range(len(to_Do_list)):
-            print(f'item {i + 1} - {to_Do_list[i]}')
+            print(f'item [{i + 1}] - {to_Do_list[i]}')
+
 def insere_Lista(txt):
     to_Do_list.append(txt)
     print('Nova tarefa inserida! :D')
+
 def remove_Lista():
     if len(to_Do_list) == 0:
         print('Você ainda não tem tarefas :(')
     else:
-        print('Qual tarefa vamos remover? Digite o número da tarefa.')
+        print('Qual tarefa vamos remover? Digite o número do item que será removido.')
         ver_Lista()
         try:
             opc = int(input('=> '))
