@@ -61,6 +61,6 @@ while True:
                 if op == 'S':
                     remove_Lista()
                 else:
-                    sair = True
+                    break
         elif opc == 4:
             break
