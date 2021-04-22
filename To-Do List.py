@@ -26,8 +26,8 @@ def remove_Lista():
         ver_Lista()
         try:
             opc = int(input('=> '))
-            while opc < 0 or opc > len(to_Do_list):
-                print('Opção inválida! Digite uma opção válida')
+            while opc <= 0 or opc > len(to_Do_list):
+                print('Opção inválida! Digite uma opção válida!')
                 ver_Lista()
                 opc = int(input('=> '))
         except:
