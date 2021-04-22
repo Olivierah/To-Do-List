@@ -60,7 +60,7 @@ while True:
         elif opc == 3:
             remove_Lista()
             while len(to_Do_list) != 0:
-                op = str(input('Ainda deseja remover alguma tarefa? [S/N]')).upper()
+                op = str(input('Ainda deseja remover alguma tarefa? [S/N]: ')).upper()
                 if op == 'S':
                     remove_Lista()
                 else:
