@@ -1,3 +1,37 @@
+# O pacote 'reportlab' deverá ser instalado para rodar o código abaixo
+# pip install reportlab
+
+from reportlab.pdfgen import canvas
+
+def pdf(to_Do_list):
+    if len(to_Do_list) > 0:
+        dict = {}
+        for i in range(len(to_Do_list)):
+            dict[f'Tarefa {i + 1}'] = to_Do_list[i]
+        try:
+           nome_pdf = str(input('Qual será o nome do pdf? '))
+           pdf = canvas.Canvas(f'{nome_pdf}.pdf')
+           x = 720
+           for indice, tarefa in dict.items():
+                x-= 20
+                pdf.drawString(100, x, '{}:  {}'.format(indice, tarefa))
+           pdf.setTitle((nome_pdf))
+           pdf.setFont('Helvetica-Oblique', 26)
+           pdf.drawString(220,750, 'Lista de afazeres:')
+           pdf.setFont('Helvetica-Bold', 12)
+           pdf.drawString(268,724, 'Minhas tarefas :D')
+           pdf.save()
+           print('=' * 30)
+           print(f'{nome_pdf} criado com sucesso! ')
+           print('=' * 30)
+        except:
+           print('!' * 30)
+           print(f'Erro ao criar o {nome_pdf}.pdf')
+           print('!' * 30)
+    else:
+        print('Sua lista ainda não possui tarefas :( ')
+        print('Tente adicionar novas tarefas para poder salvar no formato PDF :D')
+
 def menu():
     print('=' * 30)
     print('Menu'.center(30))
@@ -5,7 +39,8 @@ def menu():
     print('[1] - Ver lista de afazeres')
     print('[2] - Inserir novo item na lista')
     print('[3] - Remover um item da lista')
-    print('[4] - Sair')
+    print('[4] - Salvar sua lista em um PDF')
+    print('[5] - Sair')
 
 def ver_Lista():
     if len(to_Do_list) == 0:
@@ -44,7 +79,7 @@ while True:
     menu()
     try:
         opc = int(input('=> '))
-        while opc < 1 or opc > 4:
+        while opc < 1 or opc > 5:
             print('Opção inválida! Digite uma opção entre 1 e 4')
             menu()
             opc = int(input('=> '))
@@ -66,4 +101,6 @@ while True:
                 else:
                     break
         elif opc == 4:
+            pdf(to_Do_list)
+        elif opc == 5:
             break
