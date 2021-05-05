@@ -1,5 +1,5 @@
 # To-Do List - Python
- Simple To-do list using python.
+ To-do list using python.
  
  This to-do list has the following features so far:
  - 1 - View To-Do List
