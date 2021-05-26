@@ -4,7 +4,7 @@
 ## Why?
 This project is part of my personal portfolio, so any feedback or suggestion that can contribute to my growth and improve my developer skills will be most welcome.
  
- This to-do list has the following features so far:
+ ## Features so far:
  - 1 - View To-Do List
  - 2 - Add a new item to the list
  - 3 - Remove an item from the list
